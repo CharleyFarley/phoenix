@@ -380,7 +380,7 @@ defmodule Mix.Tasks.Phx.NewTest do
   end
 
   test "invalid options" do
-    assert_raise Mix.Error, "Invalid option: -d", fn ->
+    assert_raise Mix.Error, ~r/Invalid option: -d/, fn ->
       Mix.Tasks.Phx.New.run(["valid", "-database", "mysql"])
     end
   end
