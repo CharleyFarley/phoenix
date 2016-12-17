@@ -248,7 +248,7 @@ defmodule Mix.Tasks.Phoenix.NewTest do
 
   test "new inside umbrella" do
     in_tmp "new inside umbrella", fn ->
-      File.write! "mix.exs", umbrella_mixfile_contents
+      File.write! "mix.exs", umbrella_mixfile_contents()
       File.mkdir! "apps"
       File.cd! "apps", fn ->
         Mix.Tasks.Phoenix.New.run([@app_name])
@@ -382,7 +382,7 @@ defmodule Mix.Tasks.Phoenix.NewTest do
   end
 
   test "invalid options" do
-    assert_raise Mix.Error, "Invalid option: -database", fn ->
+    assert_raise Mix.Error, "Invalid option: -d", fn ->
       Mix.Tasks.Phoenix.New.run(["valid", "-database", "mysql"])
     end
   end

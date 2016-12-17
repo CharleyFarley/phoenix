@@ -421,7 +421,7 @@ defmodule Mix.Tasks.Phx.NewUmbrellaTest do
   end
 
   test "invalid options" do
-    assert_raise Mix.Error, "Invalid option: -database", fn ->
+    assert_raise Mix.Error, "Invalid option: -d", fn ->
       Mix.Tasks.Phx.New.run(["valid5", "-database", "mysql", "--umbrella"])
     end
   end
